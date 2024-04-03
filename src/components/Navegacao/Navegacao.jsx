@@ -15,7 +15,7 @@ function Navegacao() {
                         <Link style={{color: "#A7A000"}} to="/">Início</Link>
                     </li>
                     <li>
-                        <Link style={{color: "#A7A000"}} to="/animais">Os Animais</Link>
+                        <Link style={{color: "#A7A000"}} to="/animais">Animais</Link>
                     </li>
                     <li>
                         <Link style={{color: "#A7A000"}} to="/fotos">Fotos</Link>
@@ -25,6 +25,9 @@ function Navegacao() {
                     </li>
                     <li>
                      <Link style={{color: "#A7A000"}} to="/login">Login</Link>
+                    </li>
+                    <li>
+                     <Link style={{color: "#A7A000"}} to="/cadastroDeAve">Cadastro</Link>
                     </li>
                 </ul>
             </div>

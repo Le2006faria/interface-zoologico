@@ -1,5 +1,6 @@
 import './App.css'
 import Animais from './pages/Animais/Animais';
+import CadastroDeAve from './pages/CadastroDeAve/CadatroDeAve';
 import Depoimentos from './pages/Depoimentos/Depoimentos';
 import Fotos from './pages/Fotos/Fotos';
 import Home from './pages/Home/Home';
@@ -17,6 +18,7 @@ function App() {
           <Route exact path='/fotos' Component={Fotos} />
           <Route exact path='/depoimentos' Component={Depoimentos} />
           <Route exact path='/login' Component={Login} />
+          <Route exact path='/cadastroDeAve' Component={CadastroDeAve} />
         </Routes>
       </BrowserRouter>
     </>

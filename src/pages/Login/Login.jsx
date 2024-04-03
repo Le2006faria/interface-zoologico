@@ -4,8 +4,8 @@ import './Login.css'
 function Login(){
     return(
         <>
-        <Navegacao />
-        <p>Nada aqui ainda</p>
+            <Navegacao/>
+            <p>Nada aqui ainda</p>
         </>
     );
 }
