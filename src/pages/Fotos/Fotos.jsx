@@ -5,8 +5,9 @@ import ImgCarrossel from '../../components/ImgCarrossel/ImgCarrossel';
 function Fotos(){
     return(
         <>
-            <Navegacao></Navegacao>
-    <ImgCarrossel/>
+            <Navegacao/>
+            <h1 style={{color: "#A7A000"}}>FOTOS</h1>
+            <ImgCarrossel/>
         </>
     );
 }
