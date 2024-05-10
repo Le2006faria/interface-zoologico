@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './ListaAnimais.css'
 import { useEffect} from 'react';
+import AnimalRequests from '../../fetch/AnimalRequests';
+import { FaTrash } from 'react-icons/fa';
 
 function ListaAnimais() {
 
@@ -8,20 +10,21 @@ function ListaAnimais() {
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await fetch('http://localhost:3000/listar-aves');
-                if (!response.ok) {
-                    throw new Error('Erro ao buscar servidor');
-                }
-                const listaAnimais = await response.json();
-                setAnimais(listaAnimais);
-            } catch (error) {
-                console.error('Erro: ', error);
-            }
+            setAnimais(await AnimalRequests.listarAnimais());
         }
 
         fetchData();
     }, []);
+
+    const deletarAnimal = async (id) => {
+        const confirma = window.confirm(`Deseja deletar o animal com o id ${id}?`); 
+        if(confirma){
+            await AnimalRequests.deletarAnimal(id);
+            window.location.reload();
+        }else {
+            window.alert('Erro ao deletar o animal');
+        }
+    }
 
 
     return (
@@ -32,20 +35,24 @@ function ListaAnimais() {
             <table className='tabela'>
                 <thead>
                     <tr>
+                        <th scope="col">ID</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Idade</th>
                         <th scope="col">Genero</th>
                         <th scope="col">Envergadura</th>
+                        <th scope="col">Ação</th>
                     </tr>
                 </thead>
                 <tbody>
                 {animais.length > 0 ? (
                     animais.map((animal) => (
                         <tr>
+                        <td>{animal.idanimal}</td>
                         <td>{animal.nomeanimal}</td>
                         <td>{animal.idadeanimal}</td>
                         <td>{animal.generoanimal}</td>
-                        <td>{animal.envergaduraanimal}</td>
+                        <td>{animal.envergadura}</td>
+                        <td onClick={() => deletarAnimal(animal.idanimal)}><FaTrash /></td>
                     </tr>
                     )
                 )): (

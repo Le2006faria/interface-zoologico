@@ -1,4 +1,5 @@
 import Navegacao from '../../components/Navegacao/Navegacao';
+import ListaAnimais from '../../components/ListaAnimais/ListaAnimais';
 import './Depoimentos.css'
 
 function Depoimentos(){
