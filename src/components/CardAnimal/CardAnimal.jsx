@@ -12,7 +12,7 @@ function CardAnimal({ animal }) {
             <img src={imgNotFound} alt="Imagem não encontrada" onClick={exibeID} />
             <p>Nome: {animal.nomeanimal}</p>
             <p>Gênero: {animal.generoanimal}</p>
-            <p>Espécie: {animal.tipoanimal}</p>
+            <p>Idade: {animal.idadeanimal}</p>
             <p>Envergadura: {animal.envergadura}</p>
         </div >
     );
